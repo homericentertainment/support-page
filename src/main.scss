@@ -1,3 +1,27 @@
-body{
-    background-color: red;
+
+*{
+    box-sizing: border-box;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family:'Courier New', Courier, monospace;
+    height: 100vh;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.contact-button {
+    width: 200px;
+    height: 60px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
 }
