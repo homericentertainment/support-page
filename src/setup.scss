@@ -1,0 +1,56 @@
+$back : #0A4D68;
+$square : #05BFDB;
+$action : #00FFCA;
+$words : white;
+
+@mixin flex($gap: 10px, $justify: center, $align: center, $dir: row) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+    flex-direction: $dir;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.undecorate {
+    text-decoration: none;
+}
+
+.circle {
+    border-radius: 50%;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+input:focus {
+    outline: 0px;
+}

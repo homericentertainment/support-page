@@ -1,20 +1,46 @@
 
-*{
-    box-sizing: border-box;
+@import "src/setup.scss";
+
+body{
+    margin: 0;
+    padding: 0; 
 }
 
-.main{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#root{
+    background-color: $back;
     font-family:'Courier New', Courier, monospace;
     height: 100vh;
+    @include flex(0,space-between,center,column);
+    
+}
+
+#root>*{
+    width:100%;
+}
+
+.header{
+    background-color: $square;
+    color:$words;
+    text-align: center;
+    font-size: 32px;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.footer{
+    background-color: $square;
+    color:$words;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 20px;
+    padding: 5px;
 }
 
 .center{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     gap: 40px;
 }
 

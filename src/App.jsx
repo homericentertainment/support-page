@@ -14,30 +14,34 @@ function App() {
         })
   }
 
-  return (
-    <div className="main">
-      <div className='center'>
-        <form onSubmit={sendFeedback}>
-          <select name='game' required>
-            <option>captain coin</option>
-            <option>marble game</option>
-          </select>
-          <textarea name="message" placeholder="hhh" />
-          <button className='contact-button'> send mail</button>
-        </form>
-        <div>
-          <p>For more urgent problems, you can use our live chat</p>
-          <button className='contact-button' onClick={() => window.gist.chat('open')}>open gist</button>
-        </div>
-      </div>
+  return (<>
 
-      {popup && <div className='popup'>
-
-      </div>}
-
-
+    <div className='header'>
+      Support
     </div>
-  )
+    <div className='center'>
+      <form onSubmit={sendFeedback}>
+        <select name='game' required>
+          <option>captain coin</option>
+          <option>marble game</option>
+        </select>
+        <textarea name="message" placeholder="hhh" />
+        <button className='contact-button'> send mail</button>
+      </form>
+      <div>
+        <p>For more urgent problems, you can use our live chat</p>
+        <button className='contact-button' onClick={() => window.gist.chat('open')}>open gist</button>
+      </div>
+    </div>
+
+    {popup && <div className='popup'>
+
+    </div>}
+
+    <div className='footer'>
+      ®2023 Homeric entertainment
+    </div>
+  </>)
 }
 
 export default App
