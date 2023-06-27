@@ -1,53 +1,157 @@
-
 @import "src/setup.scss";
 
-body{
+body {
     margin: 0;
-    padding: 0; 
+    padding: 0;
+    font-size: 18px;
 }
 
-#root{
+#root {
     background-color: $back;
-    font-family:'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace;
     height: 100vh;
-    @include flex(0,space-between,center,column);
-    
+    @include flex(0, space-between, center, column);
+
 }
 
-#root>*{
-    width:100%;
+#root>* {
+    width: 100%;
 }
 
-.header{
+.header {
     background-color: $square;
-    color:$words;
+    color: $words;
     text-align: center;
     font-size: 32px;
-    border-radius: 20px;
-    padding: 20px;
-}
-
-.footer{
-    background-color: $square;
-    color:$words;
-    text-align: center;
-    font-size: 18px;
-    border-radius: 20px;
     padding: 5px;
 }
 
-.center{
+.footer {
+    background-color: $square;
+    color: $words;
+    text-align: center;
+    font-size: 18px;
+    padding: 5px;
+}
+
+.center {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 40px;
+    padding: 0 20px;
+    max-width: 700px;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+
+    select,
+    textarea {
+        width: 100%;
+        resize: none;
+        background-color: $back;
+        border: 1px solid $square;
+        color: $square;
+        padding-left: 10px;
+        border-radius: 10px;
+    }
+
+    textarea {
+        height: 170px;
+    }
+
+    select {
+        height: 30px;
+    }
+
+    select:focus,
+    textarea:focus {
+        outline: none;
+    }
+
+    p {
+        margin-bottom: 0;
+        color: $square;
+    }
+}
+
+.gist-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0px;
+
+    p {
+        margin: 0;
+        color: $square;
+    }
 }
 
 .contact-button {
-    width: 200px;
-    height: 60px;
+    width: 160px;
+    height: 40px;
     text-align: center;
     border-radius: 10px;
     cursor: pointer;
+    background-color: $action;
+    border: none;
+    font-size: 20px;
+    margin-top: 10px;
+    align-self: center;
+    color: $back;
+}
+
+.popup {
+    z-index: 2;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 360px !important;
+    background-color: $back;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    background-color: $square;
+    border-radius: 10px;
+
+    p {
+        color: $back;
+        font-size: 20px;
+    }
+}
+
+.dark{
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.5;
+}
+
+@media only screen and (max-width: 580px) {
+    .center {
+        width: 100%;
+    }
+
+    .gist-messenger-bubble-iframe iframe,
+    .gist-notification-iframe iframe,
+    .gist-post-small-iframe iframe,
+    .gist-prompt-iframe iframe {
+        bottom: 40px !important;
+        right: 8px !important;
+    }
 }
